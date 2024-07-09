@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("kapt")
     id ("com.google.dagger.hilt.android")
     id ("kotlin-parcelize")
+    id("com.google.devtools.ksp")
+    kotlin("kapt")
 }
 
 android {
@@ -77,10 +78,10 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     //Dagger Hilt
-    implementation ("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
+    implementation ("com.google.dagger:hilt-android:2.49")
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
-
+    ksp("com.google.dagger:hilt-android-compiler:2.48")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
 
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
