@@ -48,7 +48,8 @@ fun NavGraph(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(text = "News Navigator Screen ...")
-                }            }
+                }
+            }
         }
 
     }

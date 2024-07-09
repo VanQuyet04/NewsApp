@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.newsapp.presentation.navgraph.NavGraph
 import com.example.newsapp.presentation.onboarding.OnBoardingScreen
@@ -23,7 +24,8 @@ class MainActivity : ComponentActivity() {
     val viewmodel by viewModels<MainViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         installSplashScreen().apply {
             setKeepOnScreenCondition {
                 viewmodel.splashCondition
