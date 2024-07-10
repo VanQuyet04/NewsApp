@@ -107,9 +107,9 @@ fun ArticleCardPreview() {
     NewsAppTheme {
         ArticleCard(
             article = Article(
-                author = "",
-                content = "",
-                description = "",
+                author = "HJDJUVS",
+                content = "HSUASDYUSA",
+                description = "HSDASUDSAU",
                 publishedAt = "2 hours",
                 source = Source(id = "", name = "BBC"),
                 title = "Con chó Jack 5 củ",

@@ -33,7 +33,7 @@ import com.example.newsapp.presentation.navgraph.Route
 @Composable
 fun HomeScreen(
     articles: LazyPagingItems<Article>,
-    navigate: (String) -> Unit
+    navigate: (String) -> Unit,
 ) {
     val titles by remember {
         derivedStateOf {
