@@ -1,7 +1,6 @@
 package com.example.newsapp.di
 
 import android.app.Application
-import androidx.compose.ui.unit.Constraints
 import com.example.newsapp.data.manager.LocalUserManagerImpl
 import com.example.newsapp.data.remote.NewsApi
 import com.example.newsapp.data.repository.NewsRepositoryImpl
