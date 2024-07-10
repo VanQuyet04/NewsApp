@@ -10,8 +10,6 @@ import com.example.newsapp.presentation.bookmark.BookmarkScreen
 import com.example.newsapp.presentation.bookmark.BookmarkViewModel
 import com.example.newsapp.presentation.onboarding.OnBoardingScreen
 import com.example.newsapp.presentation.onboarding.OnBoardingViewModel
-import com.example.newsapp.presentation.search.SearchScreen
-import com.example.newsapp.presentation.search.SearchViewModel
 
 @Composable
 fun NavGraph(
