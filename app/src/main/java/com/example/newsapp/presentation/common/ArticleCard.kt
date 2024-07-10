@@ -29,7 +29,6 @@ import coil.request.ImageRequest
 import com.example.newsapp.R
 import com.example.newsapp.domain.model.Article
 import com.example.newsapp.domain.model.Source
-import com.example.newsapp.domain.usecases.news.NewsUseCases
 import com.example.newsapp.presentation.Dimens
 import com.example.newsapp.presentation.Dimens.ArticalCardSize
 import com.example.newsapp.presentation.Dimens.ExtraSmallPadding

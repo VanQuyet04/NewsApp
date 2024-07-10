@@ -27,7 +27,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.newsapp.R
 import com.example.newsapp.presentation.Dimens.ArticalCardSize
-import com.example.newsapp.presentation.Dimens.ExtraSmallPadding
 import com.example.newsapp.presentation.Dimens.MediumPadding1
 import com.example.newsapp.ui.theme.NewsAppTheme
 
