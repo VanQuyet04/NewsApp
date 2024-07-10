@@ -2,7 +2,6 @@ package com.example.newsapp.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.newsapp.data.local.NewsDao
 import com.example.newsapp.data.local.NewsDatabase
 import com.example.newsapp.data.local.NewsTypeConvertor
