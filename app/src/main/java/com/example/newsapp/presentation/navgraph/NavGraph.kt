@@ -12,6 +12,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.compose.collectAsLazyPagingItems
+import com.example.newsapp.presentation.common.ArticleCardShimmerEffect
+import com.example.newsapp.presentation.home.HomeScreen
+import com.example.newsapp.presentation.home.HomeViewModel
 import com.example.newsapp.presentation.onboarding.OnBoardingScreen
 import com.example.newsapp.presentation.onboarding.OnBoardingViewModel
 
@@ -42,13 +46,18 @@ fun NavGraph(
             composable(
                 route = Route.NewsNavigatorScreen.route
             ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(text = "News Navigator Screen ...")
-                }
+//                Column(
+//                       modifier = Modifier.fillMaxSize(),
+//                    verticalArrangement = Arrangement.Center,
+//                    horizontalAlignment = Alignment.CenterHorizontally
+//                ) {
+//
+//                }
+
+                val viewmodel: HomeViewModel = hiltViewModel()
+                val articles = viewmodel.news.collectAsLazyPagingItems()
+                HomeScreen(articles = articles, navigate = {})
+
             }
         }
 
