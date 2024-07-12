@@ -16,7 +16,6 @@ import com.example.newsapp.R
 import com.example.newsapp.domain.model.Article
 import com.example.newsapp.presentation.Dimens.MediumPadding1
 import com.example.newsapp.presentation.common.ArticlesList
-import com.example.newsapp.presentation.navgraph.Route
 
 @Composable
 fun BookmarkScreen(
