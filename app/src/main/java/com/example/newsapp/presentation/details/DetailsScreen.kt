@@ -54,7 +54,9 @@ fun DetailsScreen(
                 Intent(Intent.ACTION_SEND).also {
                     it.putExtra(Intent.EXTRA_TEXT, article.url)
                     it.type = "text/plain"
-
+                    if (it.resolveActivity(context.packageManager) != null) {
+                        context.startActivity(it)
+                    }
                 }
             },
             onBookmarkClick = {

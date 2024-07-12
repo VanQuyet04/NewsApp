@@ -32,7 +32,7 @@ fun NewsBottomNavigation(
 
     NavigationBar(
         modifier = Modifier.fillMaxWidth(),
-        containerColor = MaterialTheme.colorScheme.primaryContainer,
+        containerColor = MaterialTheme.colorScheme.background,
         tonalElevation = 10.dp
     ) {
         items.forEachIndexed { index, item ->
@@ -89,13 +89,13 @@ fun NewsBottomNavigationPreview() {
                     text = "Home"
                 ),
                 BottomNavigationItem(
+                    icon = R.drawable.ic_search,
+                    text = "Search"
+                ),
+                BottomNavigationItem(
                     icon = R.drawable.ic_bookmark,
                     text = "Bookmark"
                 ),
-                BottomNavigationItem(
-                    icon = R.drawable.ic_search,
-                    text = "Search"
-                )
             ),
             selected = 0,
             onItemClick = {}
