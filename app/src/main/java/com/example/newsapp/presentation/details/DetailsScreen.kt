@@ -90,40 +90,19 @@ fun DetailsScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = colorResource(id = R.color.text_title),
                 )
+
+
                 Text(
                     text = article.content,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = colorResource(id = R.color.body),
+                    color = colorResource(id = R.color.text_title),
                 )
+
+
+
 
             }
         }
 
     }
 }
-
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
-@Composable
-fun DetailsScreenPreview() {
-
-    NewsAppTheme(dynamicColor = false) {
-        DetailsScreen(
-            article = Article(
-                author = "",
-                content = "",
-                description = "",
-                publishedAt = "2 hours",
-                source = Source(id = "", name = "BBC"),
-                title = "Con chó Jack 5 củ",
-                url = "",
-                urlToImage = ""
-            ),
-            event = {}
-        ) {
-
-        }
-    }
-
-}
-

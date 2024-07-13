@@ -113,17 +113,3 @@ fun Modifier.searchBarBorder() = composed {
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES)
-@Composable
-fun SearchBarPreview() {
-    NewsAppTheme {
-        SearchBar(
-            text = "",
-            readOnly = false, onValueChange = {}
-        ) {
-
-        }
-    }
-
-}

@@ -32,24 +32,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        lifecycleScope.launch {
-            dao.upsert(
-                Article(
-                    author = "",
-                    content = "",
-                    description = "",
-                    publishedAt = "",
-                    source = Source(
-                        id = "",
-                        name = ""
-                    ),
-                    title = "",
-                    url = "",
-                    urlToImage = ""
-                )
-            )
-        }
-
         installSplashScreen().apply {
             setKeepOnScreenCondition {
                 viewmodel.splashCondition

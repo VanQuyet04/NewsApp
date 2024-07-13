@@ -21,6 +21,7 @@ import com.example.newsapp.R
 import com.example.newsapp.domain.model.Article
 import com.example.newsapp.presentation.bookmark.BookmarkScreen
 import com.example.newsapp.presentation.bookmark.BookmarkViewModel
+import com.example.newsapp.presentation.details.DetailsEvent
 import com.example.newsapp.presentation.details.DetailsScreen
 import com.example.newsapp.presentation.details.DetailsViewModel
 import com.example.newsapp.presentation.home.HomeScreen
@@ -56,37 +57,52 @@ fun NewsNavigatior() {
     var selectedItem by rememberSaveable {
         mutableStateOf(0)
     }
-    selectedItem = when (backStackState?.destination?.route) {
-        Route.HomeScreen.route -> 0
-        Route.SearchScreen.route -> 1
-        Route.BookmarkScreen.route -> 2
-        else -> 0
+    selectedItem = remember(backStackState) {
+        when (backStackState?.destination?.route) {
+            Route.HomeScreen.route -> 0
+            Route.SearchScreen.route -> 1
+            Route.BookmarkScreen.route -> 2
+            else -> 0
+        }
     }
+
+
+    val isBottomBarVisible = remember(backStackState) {
+        backStackState?.destination?.route == Route.HomeScreen.route ||
+                backStackState?.destination?.route == Route.SearchScreen.route ||
+                backStackState?.destination?.route == Route.BookmarkScreen.route
+    }
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
-            NewsBottomNavigation(items = bottomNavigationItems,
-                selected = selectedItem,
-                onItemClick = { index ->
-                    when (index) {
-                        0 -> navigateToTap(
-                            navController = navController,
-                            route = Route.HomeScreen.route
-                        )
 
-                        1 -> navigateToTap(
-                            navController = navController,
-                            route = Route.SearchScreen.route
-                        )
+            if (isBottomBarVisible) {
+                NewsBottomNavigation(items = bottomNavigationItems,
+                    selected = selectedItem,
+                    onItemClick = { index ->
+                        when (index) {
+                            0 -> navigateToTap(
+                                navController = navController,
+                                route = Route.HomeScreen.route
+                            )
 
-                        2 -> navigateToTap(
-                            navController = navController,
-                            route = Route.BookmarkScreen.route
-                        )
+                            1 -> navigateToTap(
+                                navController = navController,
+                                route = Route.SearchScreen.route
+                            )
+
+                            2 -> navigateToTap(
+                                navController = navController,
+                                route = Route.BookmarkScreen.route
+                            )
+                        }
+
                     }
+                )
+            }
 
-                }
-            )
+
         }
     ) {
 
@@ -130,6 +146,10 @@ fun NewsNavigatior() {
 
             composable(route = Route.DetailsScreen.route) {
                 val viewModel: DetailsViewModel = hiltViewModel()
+                if (viewModel.sideEffect != null) {
+                    viewModel.onEvent(DetailsEvent.RemoveSideEffect)
+                }
+
                 navController.previousBackStackEntry?.savedStateHandle?.get<Article>("article")
                     ?.let { article ->
                         DetailsScreen(

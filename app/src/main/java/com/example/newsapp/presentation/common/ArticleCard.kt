@@ -100,24 +100,3 @@ fun ArticleCard(
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES)
-@Composable
-fun ArticleCardPreview() {
-    NewsAppTheme {
-        ArticleCard(
-            article = Article(
-                author = "HJDJUVS",
-                content = "HSUASDYUSA",
-                description = "HSDASUDSAU",
-                publishedAt = "2 hours",
-                source = Source(id = "", name = "BBC"),
-                title = "Con chó Jack 5 củ",
-                url = "",
-                urlToImage = ""
-            )
-        ) {
-
-        }
-    }
-}
