@@ -18,16 +18,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.newsapp.R
 import com.example.newsapp.domain.model.Article
-import com.example.newsapp.domain.model.Source
 import com.example.newsapp.presentation.Dimens
 import com.example.newsapp.presentation.details.components.DetailsTopBar
-import com.example.newsapp.ui.theme.NewsAppTheme
 
 @Composable
 fun DetailsScreen(
