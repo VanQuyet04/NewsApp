@@ -1,6 +1,5 @@
 package com.example.newsapp.presentation.common
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,16 +22,13 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.newsapp.R
 import com.example.newsapp.domain.model.Article
-import com.example.newsapp.domain.model.Source
 import com.example.newsapp.presentation.Dimens
 import com.example.newsapp.presentation.Dimens.ArticalCardSize
 import com.example.newsapp.presentation.Dimens.ExtraSmallPadding
-import com.example.newsapp.ui.theme.NewsAppTheme
 
 @Composable
 fun ArticleCard(
