@@ -20,6 +20,10 @@ fun ArticlesList(
     onclick: (Article) -> Unit
 ) {
 
+    if (articles.isEmpty()) {
+        EmptyScreen()
+    }
+
     LazyColumn(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(Dimens.MediumPadding1),
@@ -43,6 +47,8 @@ fun ArticlesList(
     articles: LazyPagingItems<Article>,
     onclick: (Article) -> Unit
 ) {
+
+
     val handlePagingResult = handlePagingResult(articles = articles)
     if (handlePagingResult) {
         LazyColumn(
@@ -82,14 +88,24 @@ fun handlePagingResult(
         }
 
         error != null -> {
-            EmptyScreen()
+            EmptyScreen(
+                error = error
+            )
             false
+        }
+
+        articles.itemCount == 0 -> {
+            EmptyScreen(
+            )
+            false
+
         }
 
         else -> {
             true
         }
     }
+
 
 }
 
